@@ -16,7 +16,7 @@ GO
 EXEC sp_addrolemember N'db_owner', N'zharenko'
 GO
 
-CREATE DATABASE SCOPED CREDENTIAL zharenko_sas
+CREATE DATABASE SCOPED CREDENTIAL zharenko_key
 WITH 
 	IDENTITY = '***', 
 	SECRET = '*****'
@@ -26,7 +26,7 @@ CREATE EXTERNAL DATA SOURCE zharenko_data_source
 WITH (   
       TYPE = HADOOP,  
       LOCATION = '*******',
-      CREDENTIAL = zharenko_sas
+      CREDENTIAL = zharenko_key
     )  
 GO
 
